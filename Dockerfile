@@ -1,15 +1,15 @@
 FROM alpine:3.7
 
-ARG VERSION
+ARG VERSION=3.1.9-2020-06-24-1cc9d3a70
 
 RUN apk --update add --no-cache openjdk8 wget unzip bash
 
 RUN mkdir /opt && \
     cd /opt && \
-    wget -q https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-${VERSION}.zip -O ciq.zip && \
-    unzip ciq.zip -d ciq && \
-    rm -f ciq.zip
+    wget -q https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-${VERSION}.zip -O connect-iqiq.zip && \
+    unzip connect-iq.zip -d connect-iq && \
+    rm -f connect-iq.zip
 
-ENV PATH $PATH:/opt/ciq/bin
+ENV PATH $PATH:/opt/connect-iq/bin
 
 CMD ["monkeyc", "-v"]
