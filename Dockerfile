@@ -6,7 +6,7 @@ RUN apk --update add --no-cache openjdk8 wget unzip bash
 
 RUN mkdir /opt && \
     cd /opt && \
-    wget -q https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-${VERSION}.zip -O connect-iqiq.zip && \
+    wget -q https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-${VERSION}.zip -O connect-iq.zip && \
     unzip connect-iq.zip -d connect-iq && \
     rm -f connect-iq.zip
 
